@@ -29,5 +29,3 @@ def show_faces(img):
             cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
         return img
     return None
-
-process_video("video.mp4")

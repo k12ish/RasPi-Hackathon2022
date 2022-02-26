@@ -28,18 +28,20 @@ ENCODER = H264Encoder(10000000)
 CURRENT_FILENAME = ""
 
 def start_recording():
-    assert CURRENT_FNAME == ""
-    timestamp = time.strftime('%b-%d-%Y_%H%M', time.localtime())
+    global CURRENT_FILENAME
+    assert CURRENT_FILENAME == ""
+    timestamp = time.strftime('%b-%d-%Y_%H%M%S', time.localtime())
     fname = "Recordings/" + timestamp + ".h264"
     ENCODER.output = open(fname, 'wb')
     PICAM2.encoder = ENCODER
     PICAM2.start_encoder()
     PICAM2.start()
-    CURRENT_FNAME = fname
+    CURRENT_FILENAME = fname
     return fname
 
 
 def finish_recording():
+    global CURRENT_FILENAME
     assert CURRENT_FILENAME != ""
     PICAM2.stop()
     PICAM2.stop_encoder()
