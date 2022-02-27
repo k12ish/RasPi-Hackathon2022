@@ -9,6 +9,7 @@ from qt_gl_preview import *
 import time, os, fnmatch, shutil
 import random
 
+
 def is_light_on():
     if random.randint(0, 5) < 3:
         return False
@@ -27,12 +28,13 @@ ENCODER = H264Encoder(10000000)
 
 CURRENT_FILENAME = ""
 
+
 def start_recording():
     global CURRENT_FILENAME
     assert CURRENT_FILENAME == ""
-    timestamp = time.strftime('%b-%d-%Y_%H%M%S', time.localtime())
+    timestamp = time.strftime("%b-%d-%Y_%H%M%S", time.localtime())
     fname = "Recordings/" + timestamp + ".h264"
-    ENCODER.output = open(fname, 'wb')
+    ENCODER.output = open(fname, "wb")
     PICAM2.encoder = ENCODER
     PICAM2.start_encoder()
     PICAM2.start()
@@ -47,7 +49,8 @@ def finish_recording():
     PICAM2.stop_encoder()
     fname, CURRENT_FILENAME = CURRENT_FILENAME, ""
     return fname
-        
+
+
 """
 light_on = True
 while light_on:
