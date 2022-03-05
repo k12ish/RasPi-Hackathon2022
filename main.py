@@ -2,7 +2,7 @@
 Run this file to activate the fridge guard
 """
 from camerasystem import finish_recording, start_recording
-from test_gpio import is_stealing
+from photodiode import is_stealing
 from postprocess import process_video
 
 import time, signal
