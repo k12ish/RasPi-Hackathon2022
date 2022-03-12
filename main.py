@@ -13,9 +13,8 @@ FILENAMES = []
 class GracefulExit:
     def __init__(self):
         self.kill_now = False
+        # handle <Ctrl-C> terminal input
         signal.signal(signal.SIGINT, self.exit_gracefully)
-        signal.signal(signal.SIGTERM, self.exit_gracefully)
-        signal.signal(signal.SIGQUIT, self.exit_gracefully)
 
     def __bool__(self):
         return self.kill_now
