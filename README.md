@@ -1,26 +1,19 @@
-# Raspi-Hackathon2022:FridgeGuard!!!
+# FridgeGuard
 
-Features:
-Will help guard your food by starting a recording of anyone moving your fridge food
+Food theft is ubiquitous in shared Kitchens. 
+FridgeGuard seeks to end this crisis by catching thieves on camera using a Raspberry Pi.
 
-Inspiration
-our food being stolen
-
-
-How we built it
-We used a raspberry pi 4 with a camera and a circuit with an accelerometer to detect when the container is being moved. When this happens, the raspberry pi 4 will detect this and respond by recording a video, then saving it. When you realise your food has been stolen you can check the footage of the thief.
+### Usage
 
 
-Previous prototypes
-photodiode
+### Technical Challenges
 
+Unfortunately, battery tech has not advanced enough to leave cameras recording for multiple days on a power pack.
+To work around this, we use an accelerometer which detects when the fridge door is opened.
+The circuitry alerts the Rasberry Pi, which promptly begins recording.
 
-Challengers we ran into
-Photodiode not working
+### Hardware
 
-Accomplishments we are proud of
-
-What we learned
-
-Whats next?
-Not need the fridge to be yanked with incredible force; increase sensitivity (suitably)
+- Raspberry Pi 4, 
+- Wide angle camera 
+- Breadboard with an accelerometer
